@@ -21,7 +21,9 @@ public class NetUtils {
     public static String sendGetRequest(RequestCtx ctx) throws Exception {
         OkHttpClient okHttpClient = new OkHttpClient();
         OkHttpClient.Builder builder =  okHttpClient.newBuilder();
-        builder.connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS);
+        builder.connectTimeout(ctx.getTimerout(),TimeUnit.SECONDS);
+        builder.readTimeout(ctx.getTimerout(),TimeUnit.SECONDS);
+        builder.writeTimeout(ctx.getTimerout(),TimeUnit.SECONDS);
 //        builder.writeTimeout()
 
         final Request request = new Request.Builder()
@@ -36,7 +38,9 @@ public class NetUtils {
     public static String sendPostRequest(RequestCtx ctx) throws Exception {
         OkHttpClient okHttpClient = new OkHttpClient();
         OkHttpClient.Builder builder =  okHttpClient.newBuilder();
-        builder.connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS);
+        builder.connectTimeout(ctx.getTimerout(),TimeUnit.SECONDS);
+        builder.readTimeout(ctx.getTimerout(),TimeUnit.SECONDS);
+        builder.writeTimeout(ctx.getTimerout(),TimeUnit.SECONDS);
 
         Request request = new Request.Builder()
                 .url(ctx.getUrl())
