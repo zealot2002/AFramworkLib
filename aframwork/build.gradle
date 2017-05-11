@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         minSdkVersion 17
-        versionCode 3
-        versionName "0.3"
+        versionCode 4
+        versionName "0.4"
     }
     buildTypes {
         release {
@@ -30,8 +30,6 @@ dependencies {
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     //    apache validator
     compile files('src/main/java/lib/commons-validator-1.5.1.jar')
-    //    image loader
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
     //    toast
     compile 'com.github.johnkil.android-appmsg:appmsg:1.2.0'
 
