@@ -10,6 +10,7 @@ import java.util.regex.Matcher;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -31,6 +32,7 @@ public class NetUtils {
 
         Request request = new Request.Builder()
                 .url(ctx.getUrl())
+                .headers(Headers.of(ctx.getHeaderMap()))
                 .build();
         Response response = client.newCall(request).execute();
 

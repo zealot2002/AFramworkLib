@@ -78,34 +78,32 @@ public abstract class BaseActivity extends FragmentActivity {
     }
     /** 打开进度条 */
     protected void showLoading(Context context, String message) {
-        if(loadingDialog!=null&&loadingDialog.isShowing()){
-            return ;
-        }
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.loading_dialog, null);// 得到加载view
-        LinearLayout layout = (LinearLayout) v.findViewById(R.id.dialog_view);// 加载布局
-
-        if (loadingDialog == null) {
-            loadingDialog = new Dialog(context, R.style.loading_dialog);// 创建自定义样式dialog
-            loadingDialog.setCancelable(false);// 不可以用“返回键”取消
-        }
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT);
-        loadingDialog.setContentView(layout,params);// 设置布局
-
-        loadingDialog.show();
-    }
+//        if(loadingDialog!=null&&loadingDialog.isShowing()){
+//            return ;
+//        }
+//        if (loadingDialog == null) {
+//            LayoutInflater inflater = LayoutInflater.from(context);
+//            View v = inflater.inflate(R.layout.loading_dialog, null);// 得到加载view
+//            LinearLayout layout = (LinearLayout) v.findViewById(R.id.dialog_view);// 加载布局
+//            loadingDialog = new Dialog(context, R.style.loading_dialog);// 创建自定义样式dialog
+//            loadingDialog.setCancelable(false);// 不可以用“返回键”取消
+//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+//                    LinearLayout.LayoutParams.MATCH_PARENT,
+//                    LinearLayout.LayoutParams.MATCH_PARENT);
+//            loadingDialog.setContentView(layout,params);// 设置布局
+//        }
+//        loadingDialog.show();
+}
 
     public void closeLoading() {
-        try{
-            if (loadingDialog != null) {
-                loadingDialog.dismiss();
-                loadingDialog = null;
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//            if (loadingDialog != null) {
+//                loadingDialog.dismiss();
+//                loadingDialog = null;
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
 
     public void startActivity(Class<?> cls) {
