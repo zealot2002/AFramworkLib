@@ -29,11 +29,19 @@ public class NetUtils {
                 .readTimeout(ctx.getTimerout(), TimeUnit.SECONDS)
                 .writeTimeout(ctx.getTimerout(),TimeUnit.SECONDS)
                 .build();
+        Request request = null;
 
-        Request request = new Request.Builder()
-                .url(ctx.getUrl())
-                .headers(Headers.of(ctx.getHeaderMap()))
-                .build();
+        if(ctx.getHeaderMap()!=null){
+            request = new Request.Builder()
+                    .url(ctx.getUrl())
+                    .headers(Headers.of(ctx.getHeaderMap()))
+                    .build();
+        }else{
+            request = new Request.Builder()
+                    .url(ctx.getUrl())
+                    .build();
+        }
+
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
